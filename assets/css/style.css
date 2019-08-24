@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    color: yellow;
   }
   
   #end-page {
@@ -14,11 +15,11 @@ body {
   
   h1 {
     margin-bottom: 20px;
-    color: white;
+    color: red;
   }
 
   h2{
-      color: white;
+      color: blue;
   }
   
   
