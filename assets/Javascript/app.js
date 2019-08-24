@@ -41,10 +41,8 @@ $(document).ready(function(){
     }
   }
   
-  // functions to handle the building questions page and scoring
   var trivia = {
   
-    // pull questions from the array of questions, loop through them, and append to UI
     displayQuestions: function() {
       var divContainer = $("#questions-box");
       var answerGroup = $(".form-check");
@@ -63,13 +61,13 @@ $(document).ready(function(){
         divContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer3 + '</label></div>');
       }
   
-      // add a Done button to the end of the page and register its click handler
+      
       var doneButton = '<button class="btn btn-primary" id="done-button" type="submit">Done</button>';
       divContainer.append(doneButton);
       $("#done-button").on("click", gameState.stopTimer);
     },
   
-    // test if the user answers are correct, incorrect, or if there are unanswered questions
+
     checkAnswers: function() {
       var correctAnswer;
       var userAnswer;
@@ -77,8 +75,7 @@ $(document).ready(function(){
       var numIncorrect = 0;
       var numUnanswered = 0;
   
-      // loop through to compare the text of the label with the user answers
-      // increment score counts appropriately
+
       for (var i = 0; i < questionBank.length; i++) {
         correctAnswer = questionBank[i].correct;
         userAnswer = $('input[id=radio'+i+']:checked + label').text();
@@ -94,12 +91,12 @@ $(document).ready(function(){
         }
       }
   
-      // show the end page with the score tally
+
       gameState.showEndPage(numCorrect, numIncorrect, numUnanswered);
     },
   }
   
-  // array of objects with the questions, possible answers, and the correct answer
+
   var questionBank =
   [
     {
